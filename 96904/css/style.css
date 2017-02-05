@@ -265,6 +265,29 @@ i.link {
 i.link:hover{
 	opacity: 0.5;
 }
+input[type=text], select {
+   width: 300px;
+   padding: 10px;
+   margin: 6px 0;
+   border: 1px solid #aaa;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+
+input[type=submit] {
+   width: 200px;
+   background-color: #09f;
+   color: white;
+   padding: 15px;
+   margin: 10px 0;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+.search {
+    font-size: medium;
+}
+
 i.rss {
   width: 34px;
   height: 34px;
@@ -368,7 +391,7 @@ i.twt:hover{
 }
 /*-- flexisel --*/
 .head-top{
-	background: #5fa022;
+	background: #D96B66;
 	padding: 0.8em 0;
 }
 a.see {
