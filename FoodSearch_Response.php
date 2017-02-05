@@ -51,7 +51,7 @@
     $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
             "FROM $TableName " .
             "WHERE (( ($FoodName = \"\") OR ($CFoodName = $FoodName) ) AND " .
-            "(($RestName = \"\") OR ($CRestName = $RestName))";
+            "(($RestName = \"\") OR ($CRestName = $RestName)))";
             // Add Tag later
     echo "SQL = " . $SQL;
 
