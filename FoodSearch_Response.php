@@ -79,12 +79,9 @@
     function show_result($result)
     {
         echo "Food Name/Restaurant/Price<br>";
-        if($result->num_rows > 0)
+        while($row = mysql_fetch_array($result, MYSQL_BOTH)))
         {
-            while($row = mysql_fetch_array($result, MYSQL_BOTH)))
-            {
-                echo $row['foodname']." ".$row['restaurant']." ".$row['price']."<br>";
-            }
+            echo $row['foodname']." ".$row['restaurant']." ".$row['price']."<br>";
         }
         else
         {
