@@ -29,7 +29,10 @@ echo $CFoodPrice . "\n";
 $MaxPrice = $_POST["MaxPrice"];
 
 $SQL =   "SELECT $CFoodName, $CRestName, $CFoodPrice " .
-        "FROM $TableName "; /*. 
+        "FROM $TableName " . 
+        "ORDER BY RAND() " . 
+        "LIMIT 1";
+        /*
         "WHERE CAST($CFoodPrice AS FLOAT) >= $MaxPrice " .
         "ORDER BY RAND() " .
         "LIMIT 1";*/
