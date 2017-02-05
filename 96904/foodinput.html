@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Running Food</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Delicious Food" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+    <script src="js/simpleCart.min.js"> </script>
+</head>
+<body>
+<!-- header -->
+<div class="head-top">
+</div>
+<div class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><img src="images/RF.png" class="img-responsive" alt=""></a>
+        </div>
+        <div class="header-left">
+            <div class="head-nav">
+                <span class="menu"> </span>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href=" resturants.html">Resturants</a></li>
+                    <li><a href=" carrier.html">Carrier</a></li>
+                    <li><a href=" contact.html">Contact</a></li>
+                    <li class = "active"><a href=" foodinput.html">Food Input</a></li>
+                    <div class="clearfix"> </div>
+                </ul>
+                <!-- script-for-nav -->
+                <script>
+                    $( "span.menu" ).click(function() {
+                        $( ".head-nav ul" ).slideToggle(300, function() {
+                            // Animation complete.
+                        });
+                    });
+                </script>
+                <!-- script-for-nav -->
+            </div>
+            <div class="header-right1">
+                <div class="cart box_1">
+                    <a href="checkout.html">
+                        <h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="images/bag.png" alt=""></h3>
+                    </a>
+                    <p><a href="javascript:;" class="simpleCart_empty">empty card</a></p>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<div class="contact">
+<div class="container">
+    <div class="contact-head">
+        <h3>Input Food</h3><br><br>
+    </div>
+<script type="text/javascript">
+    <!--
+    function fsubmit(){
+        var data = new FormData($('#form1')[0]);
+        $.ajax({
+            url: '96904/images/server.php',
+            type: 'POST',
+            data: data,
+            dataType: 'JSON',
+            cache: false,
+            processData: false,
+            contentType: false
+        }).done(function(ret){
+            if(ret['isSuccess']){
+                var result = '';
+                result += 'ID' + ret['ID']+'<br>';
+                result += 'foodname=' + ret['name'] + '<br>';
+                result += 'price=' + ret['price']+'<br>';
+                result += 'restraunt=' + ret['rest'] + '<br>';
+                result += '<img src="' + ret['photo']  + '" width="100">';
+                $('#result').html(result);
+            }else{
+                alert('提交失敗');
+            }
+        });
+        var r=confirm("Add another food ?");
+        if(r){location.reload();}
+        return false;
+    }
+    //-->
+</script>
+
+<form name="form1" id="form1">
+    <div class="contact-grid">
+        <form>
+            <h4> Food Name : <input type="text" placeholder=" Name" required/></h4><br>
+            <h4> Price : <input type="text" placeholder=" Price" required/></h4><br>
+            <h4> Rastaurant:</h4>&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="radio" name="rest" value="PizzaHut">PizzaHut<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="radio" name="rest" value="Domino">Dominos<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="radio" name="rest" value="Manderine House">Manderine House<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="radio" name="rest" value="Tokyoseoul">Tokyoseoul<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="radio" name="rest" value="NewGarden">NewGarden<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="radio" name="rest" value="RedBento">RedBento<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="radio" name="rest" value="Emerald">Emerald<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;
+            <input type="radio" name="rest" value="Popo">Popo<br><br><br>
+            <h4>Photo : </h4>
+            <input type="file" name="photo" id="photo"><br>
+            <input type="button" name="b1" value="submit" onclick="fsubmit()">
+        </form>
+    </div>
+</form>
+    <div id="result"></div></div></div>
+
+<div class="footer">
+    <div class="container">
+        <div class="footer-left">
+            <p>Copyrights © 2017 Running Food All rights reserved </p>
+        </div>
+        <div class="footer-right">
+            <ul>
+                <li><a href="#"><i class="fbk"></i></a></li>
+                <li><a href="#"><i class="googpl"></i></a></li>
+                <li><a href="#"><i class="link"></i></a></li>
+                <li><a href="#"><i class="rss"></i></a></li>
+                <li><a href="#"><i class="twt"></i></a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+</body>
+</html>
