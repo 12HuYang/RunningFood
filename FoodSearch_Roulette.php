@@ -44,13 +44,13 @@ $Conn = mysql_connect($ServerName, $Username, $Password);
 /////////////////////////////////////////
 // Main
 echo "Getting Results...\n";
-$Result = $Conn->query($SQL);
+$Result = mysql_query($SQL);
 if(InputValidation($MaxPrice)){
     echo "Food Name/Restaurant/Price<br>";
     while(show_result($Result))
     {
         echo "Getting recursive results...\n";
-        $Result = $Conn->query($SQL);
+        $Result = mysql_query($SQL);
     }
 } 
 
@@ -60,9 +60,8 @@ if(InputValidation($MaxPrice)){
 function show_result($Result)
 {
     global $MaxPrice;
-    if($Result->num_rows > 0)
+    if($row = mysql_fetch_array($result, MYSQL_BOTH))
     {
-        $row = $Result->fetch_assoc();
         echo $row[$CFoodName] . " " . $row[$CRestName] . " " . $row[$CFoodPrice] . "<br>";
         $MaxPrice -= ((float)$row[$CFoodPrice]);
         return true;
