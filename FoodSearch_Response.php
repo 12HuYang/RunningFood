@@ -44,9 +44,9 @@
     echo $_POST['RestName'];
     echo $_POST['FoodTag'];
 
-    $FoodName   = format_input($_POST['FoodName']);
-    $RestName   = format_input($_POST['RestName']);
-    $FoodTag    = format_input($_POST['FoodTag']);
+    $FoodName   = $_POST['FoodName'];
+    $RestName   = $_POST['RestName'];
+    $FoodTag    = $_POST['FoodTag'];
 
     $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
             "FROM $TableName " .
@@ -66,6 +66,7 @@
     /////////////////////////////////////////
     // Functions
     /////////////////////////////////////////
+    /*
     function format_input($data)
     {
         $data = trim($data);
@@ -73,6 +74,7 @@
         $data = htmlspecialchars($data);
         return $data;
     }
+    */
 
     function show_result($result)
     {
