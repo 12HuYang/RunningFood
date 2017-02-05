@@ -81,7 +81,7 @@
         echo "Food Name/Restaurant/Price<br>";
         if($result->num_rows > 0)
         {
-            while($row = $result->fetch_assoc())
+            while($row = mysql_fetch_array($result, MYSQL_BOTH)))
             {
                 echo $row['foodname']." ".$row['restaurant']." ".$row['price']."<br>";
             }
