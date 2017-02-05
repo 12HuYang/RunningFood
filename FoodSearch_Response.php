@@ -64,7 +64,7 @@
 
     echo "showing result...\n";
     
-    show_result($Result);
+    //show_result($Result);
     
     /////////////////////////////////////////
     // Functions
