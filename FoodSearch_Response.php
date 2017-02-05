@@ -32,16 +32,6 @@
     // Input Variables
 
 
-    /////////////////////////////////////////
-    // SQL String
-    $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
-            "FROM $TableName " .
-            "WHERE $CFoodName = $FoodName AND " .
-            "($RestName = NULL OR $CRestName = $RestName)";
-            // Add Tag later
-
-    echo "SQL = " . $SQL;
-    
     //Connect to the database
     echo "Connecting...\n";
     $Conn = mysql_connect($ServerName, $UserName, $Password); 
@@ -57,6 +47,13 @@
     $FoodName   = format_input($_POST['FoodName']);
     $RestName   = format_input($_POST['RestName']);
     $FoodTag    = format_input($_POST['FoodTag']);
+
+    $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
+            "FROM $TableName " .
+            "WHERE $CFoodName = $FoodName AND " .
+            "($CRestName = NULL OR $CRestName = $RestName)";
+            // Add Tag later
+    echo "SQL = " . $SQL;
     
     echo "Sending string...\n";
     
