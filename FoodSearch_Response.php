@@ -60,7 +60,7 @@
     
     echo "Sending string...\n";
     
-    $Result = $Conn->query($SQL);
+    $Result = mysql_query($SQL);
 
     echo "showing result...\n";
     
