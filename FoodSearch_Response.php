@@ -46,7 +46,7 @@
     echo "Connecting...\n";
     $Conn = mysql_connect($ServerName, $Username, $Password); 
     @mysql_select_db($DBName) or ("Database not found");
-
+    /*
     //Format POST input
     echo "Formatting inputs...\n";
     $FoodName   = format_input($_POST["FoodName"]);
