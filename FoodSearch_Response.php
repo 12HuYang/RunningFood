@@ -83,10 +83,6 @@
         {
             echo $row['foodname']." ".$row['restaurant']." ".$row['price']."<br>";
         }
-        else
-        {
-            echo "No Results found";
-        }
     }
 ///////////////////////////////////////// 
 ?>
