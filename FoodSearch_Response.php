@@ -1,5 +1,7 @@
 <?php
 echo "Starting Response";
+?>
+/*
 /////////////////////////////////////////
 // Database Variables
 $DBName         = "b11_19615970_running4food";
@@ -15,8 +17,7 @@ echo $UserName . "\n";
 echo $Password . "\n";
 echo $Conn . "\n";
 echo $TableName . "\n";
-?>
-/*
+
 /////////////////////////////////////////
 // Column Variables
 $CFoodName       = "foodname";
