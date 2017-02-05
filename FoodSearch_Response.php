@@ -58,8 +58,8 @@
     $FoodTag    = format_input($_POST['FoodTag']);
     
     echo "Sending string...\n";
-    
-    $Result = $Conn->query($SQL);
+    if($Conn == false) echo "Not Connected";
+    //$Result = $Conn->query($SQL);
 
     echo "showing result...\n";
     /*
