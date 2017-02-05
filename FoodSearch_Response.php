@@ -50,12 +50,9 @@
 
     $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
             "FROM $TableName " . 
-            "WHERE $CFoodName = \"$FoodName\"";
-        /*
-        .
-            "WHERE ( ($FoodName = \"\") OR ($CFoodName = $FoodName) ) AND " .
-            "(($RestName = \"\") OR ($CRestName = $RestName))";
-            // Add Tag later */
+            "WHERE ( ($FoodName = \"\") OR ($CFoodName = \"$FoodName\") ) AND " .
+            "(($RestName = \"\") OR ($CRestName = \"$RestName\"))";
+            // Add Tag later
     echo "SQL = " . $SQL;
 
     echo "Sending string...\n";
