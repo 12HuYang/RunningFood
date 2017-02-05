@@ -35,13 +35,13 @@
     /////////////////////////////////////////
     // SQL String
     $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
-            "FROM $TableName" .
+            "FROM $TableName " .
             "WHERE $CFoodName = $FoodName AND " .
             "($RestName = NULL OR $CRestName = $RestName)";
             // Add Tag later
 
     echo "SQL = " . $SQL;
-    /*
+    
     //Connect to the database
     echo "Connecting...\n";
     $Conn = mysql_connect($ServerName, $Username, $Password); 
@@ -52,11 +52,6 @@
     $FoodName   = format_input($_POST["FoodName"]);
     $RestName   = format_input($_POST["RestName"]);
     $FoodTag    = format_input($_Post["FoodTag"]);
-
-    echo "Formatting string...\n";
-    $FoodName   = format_string_in($FoodName);
-    $RestName   = format_string_in($FoodName);
-    $FoodTag    = format_string_in($FoodName);
 
     echo "Sending string...\n";
     $Result = $Conn->query($SQL);
@@ -72,12 +67,6 @@
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
-    }
-
-    function format_string_in($string)
-    {
-        $string = strtolower($string);
-        return $string;
     }
 
     function show_result($result)
