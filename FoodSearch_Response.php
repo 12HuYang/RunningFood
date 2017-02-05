@@ -23,7 +23,7 @@ $CFoodPrice      = "price";
 $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice ".
         "FROM $TableName".
         "WHERE $CFoodName = $FoodName AND ".
-        "($RestName = NULL OR $CRestName = $RestName)"
+        "($RestName = NULL OR $CRestName = $RestName)";
         // Add Tag later
 
 
@@ -57,7 +57,7 @@ function format_input($data)
 function format_string_in($string)
 {
     $string = strtolower($string);
-    return $string
+    return $string;
 }
 
 function show_result($result)

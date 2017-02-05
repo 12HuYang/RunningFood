@@ -20,7 +20,7 @@ SQL =   "SELECT $CFoodName, $CRestName, $CFoodPrice ".
         "FROM $TableName ".
         "WHERE CAST($CFoodPrice AS FLOAT) >= $MaxPrice ".
         "ORDER BY RAND() ".
-        "LIMIT 1"
+        "LIMIT 1";
 
 /////////////////////////////////////////
 //Connect to the database
@@ -64,6 +64,6 @@ function InputValidation($Input)
     {
         echo "Food Max Price is not a number value larger than 0!"
     }
-    return $Result
+    return $Result;
 }
 ?>
