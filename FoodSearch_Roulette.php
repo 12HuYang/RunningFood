@@ -24,7 +24,7 @@ SQL =   "SELECT $CFoodName, $CRestName, $CFoodPrice ".
 
 /////////////////////////////////////////
 //Connect to the database
-$Conn = mysql_connect($ServerName, $Username, $Password); $DBName);
+$Conn = mysql_connect($ServerName, $Username, $Password);
 @mysql_select_db($DBName) or ("Database not found");
 
 /////////////////////////////////////////
