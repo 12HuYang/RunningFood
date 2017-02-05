@@ -46,7 +46,7 @@
     echo "Connecting...\n";
     $Conn = mysql_connect($ServerName, $UserName, $Password); 
     if(!$Conn) die('Could not connect; ' . mysql_error());
-    //else mysql_select_db($DBName, $Conn);
+    else mysql_select_db($DBName, $Conn);
     
     //Format POST input
     echo "Formatting inputs...\n";
@@ -60,12 +60,12 @@
     
     echo "Sending string...\n";
     
-    //$Result = $Conn->query($SQL);
+    $Result = $Conn->query($SQL);
 
     echo "showing result...\n";
-    /*
+    
     show_result($Result);
-    */
+    
     /////////////////////////////////////////
     // Functions
     /////////////////////////////////////////
@@ -93,6 +93,6 @@
         }
     }
 
-//Conn->close();
+Conn->close();
 ///////////////////////////////////////// 
 ?>
