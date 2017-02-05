@@ -15,19 +15,13 @@ $password = "lionking";
 $database = "b11_19615970_running4food";
 
 $connection=mysql_connect($servername,$username,$password);
-$dbcon=mysql_select_db($database);
+@mysql_select_db($database) or ("Database not found");
 
-if(!$connection){
-    die("Connection failed: ". mysqli_error());
-}
-if(!$dbcon){
-    die("Database connection failed: ".mysql_error());
-}
-$insert_query= "INSERT INTO foodlist VALUES('',$ID,$name,$gender,$price,$filename)";
-mysql_query($insert_query) or die("Strange error");
-mysql_close($connection);
+$insert_query= "INSERT INTO foodlist VALUES('','$ID','$name','$gender','$price','$filename')";
+mysql_query($insert_query) or die(mysql_error());
+//mysql_close($connection);
 //header("Location: foodinput.php");
-//die ();
+//die ();*/
 
 if(move_uploaded_file($_FILES['photo']['tmp_name'], $filename)){
 

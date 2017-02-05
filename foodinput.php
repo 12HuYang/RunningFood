@@ -30,9 +30,11 @@ Restaurant
                     alert('提交失敗');
                 }
             });
+            var r=confirm("Add another food ?");
+            if(r){location.reload();}
             return false;
         }
-        -->
+        //-->
     </script>
 
 </head>
