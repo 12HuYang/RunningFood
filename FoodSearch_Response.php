@@ -81,7 +81,7 @@
         {
             while($row = $result->fetch_assoc())
             {
-                echo $row[$CFoodName]." ".$row[$CRestName]." ".$row[$CFoodPrice]."<br>";
+                echo $row['foodname']." ".$row['restaurant']." ".$row['price']."<br>";
             }
         }
         else
