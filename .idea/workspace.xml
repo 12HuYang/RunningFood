@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82c44e40-47fb-4c79-860a-be5a78b353cd" name="Default" comment="add carrier">
+    <list default="true" id="82c44e40-47fb-4c79-860a-be5a78b353cd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/orders.html" afterPath="$PROJECT_DIR$/orders.html" />
     </list>
     <ignored path="RunningFood.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -395,7 +393,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1486230966740</updated>
-      <workItem from="1486230967961" duration="29919000" />
+      <workItem from="1486230967961" duration="29933000" />
     </task>
     <task id="LOCAL-00001" summary="foodinput">
       <created>1486235152861</created>
@@ -446,11 +444,18 @@
       <option name="project" value="LOCAL" />
       <updated>1486271677642</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add carrier">
+      <created>1486278206386</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1486278206386</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29919000" />
+    <option name="totallyTimeSpent" value="29933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="810" extended-state="0" />
