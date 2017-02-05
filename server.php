@@ -23,6 +23,8 @@ mysql_query($insert_query) or die(mysql_error());
 //header("Location: foodinput.php");
 //die ();*/
 
+
+
 if(move_uploaded_file($_FILES['photo']['tmp_name'], $filename)){
 
     $response['isSuccess'] = true;
