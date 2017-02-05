@@ -93,11 +93,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="clearfix"> </div>
 						</div>
 						<ul>
+							<form name="FoodSearch" method="post" action="FoodSearch_Response.php">
 							<li class="span1_of_1">
 								 <!----------start section_room----------->
 								 <form>
 									<input type="text" class="textbox" value="RestName" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'RestName';}">
 								</form>
+							 </li>
+							 <li class="span1_of_3">
+									<div class="date_btn">
+										<form action="resturants.html">
+											<input type="submit" value="Find resturants">
+										</form>
+									</div>
 							 </li>
 							<li class="span1_of_1">
 								<!----------start section_room----------->
@@ -107,12 +115,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</li>
 							<li class="span1_of_3">
 								<div class="date_btn">
-									<form action="FoodSearch_Response.php">
-										<input type="submit" value="Find">
+									<form action="resturants.html">
+										<input type="submit" value="Find Food">
 									</form>
 								</div>
 							</li>
-						</ul>
+							</form>
 								<div class="clearfix"></div>
 						</ul>
 					</div>
