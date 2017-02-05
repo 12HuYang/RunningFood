@@ -8,7 +8,7 @@
     $ServerName     = "sql100.byethost11.com";
     $UserName       = "b11_19615970";
     $Password       = "lionking";
-    $Conn           = NULL;
+    $Conn           = "";
     $TableName      = "foodlist";
 
     echo $DBName . "\n";
@@ -45,7 +45,7 @@
     //Connect to the database
     echo "Connecting...\n";
     $Conn = mysql_connect($ServerName, $Username, $Password); 
-    if(!$Conn) echo "Not Connected";
+    if(!$Conn) die('Could not connect; ' . mysqli_error());
     else mysql_select_db($DBName, $Conn);
     
     //Format POST input
