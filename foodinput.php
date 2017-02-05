@@ -10,7 +10,7 @@ Restaurant
         function fsubmit(){
             var data = new FormData($('#form1')[0]);
             $.ajax({
-                url: 'server.php',
+                url: '96904/images/server.php',
                 type: 'POST',
                 data: data,
                 dataType: 'JSON',
