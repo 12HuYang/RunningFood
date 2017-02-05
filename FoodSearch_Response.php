@@ -11,9 +11,9 @@
     
     /////////////////////////////////////////
     // Column Variables
-    $CFoodName       = "";
-    $CRestName       = "";
-    $CFoodPrice      = "";
+    $CFoodName       = "foodname";
+    $CRestName       = "restaurant";
+    $CFoodPrice      = "price";
     
     /////////////////////////////////////////
     // Input Variables
@@ -29,10 +29,10 @@
         
     
     //Connect to the database
-    $Conn = new mysqli($servername, $username, $password, $dbname);
+    $Conn = new mysqli($ServerName, $Username, $Password, $DBName);
     
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if ($Conn->connect_error) {
+        die("Connection failed: " . $Conn->connect_error);
     } 
     
     //Format POST input
@@ -66,7 +66,7 @@
     
     function show_result($result)
     {
-        echo "Food Name/Restaurant/Price"
+        echo "Food Name/Restaurant/Price<br>";
         if($result->num_rows > 0)
         {
             while($row = $result->fetch_assoc())
