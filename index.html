@@ -96,30 +96,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="span1_of_1">
 								 <!----------start section_room----------->
 								 <form>
-									<input type="text" class="textbox" value="RestName" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'RestName';}">
+									<input type="text" class="textbox" name="RestName" value = "RestName" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'RestName';}">
 									 <br><br>
-									 <input type="text" class="textbox" value="FoodName" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'FoodName';}">
+									 <input type="text" class="textbox" name="FoodName" value = "FoodName"onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'FoodName';}">
 								</form>
 							 </li>
 
 							<li class="span1_of_3">
 								<div class="date_btn">
-									<form action="FoodSearch_Response.php">
+									<form action="FoodSearch_Response.php" method = "post">
 										<input type="submit" value="Find">
 									</form>
 								</div>
 							</li>
-							
+
 								<br><br><br><h6>Food Roulette! Enter Max Price!</h6><br>
 								<li class="span1_of_1">
 									<!----------start section_room----------->
 									<form>
-										<input type="text" class="textbox" value="MaxPrice" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'MaxPrice';}">
+										<input type="text" class="textbox" name="MaxPrice" value="MaxPrice" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'MaxPrice';}">
 									</form>
 								</li>
 								<li class="span1_of_3">
 									<div class="date_btn">
-										<form action="FoodSearch_Roulette.php">
+										<form action="FoodSearch_Roulette.php" method="post">
 											<input type="submit" value="Submit">
 										</form>
 									</div>
