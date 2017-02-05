@@ -44,7 +44,7 @@
     
     //Connect to the database
     echo "Connecting...\n";
-    $Conn = mysql_connect($ServerName, $Username, $Password); 
+    $Conn = mysql_connect($ServerName, $UserName, $Password); 
     if(!$Conn) die('Could not connect; ' . mysql_error());
     //else mysql_select_db($DBName, $Conn);
     
