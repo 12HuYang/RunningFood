@@ -44,9 +44,9 @@
     echo $_POST['RestName'];
     echo $_POST['FoodTag'];
 
-    $FoodName   = $_POST['FoodName'];
-    $RestName   = $_POST['RestName'];
-    $FoodTag    = $_POST['FoodTag'];
+    $FoodName   = trim($_POST['FoodName']);
+    $RestName   = trim($_POST['RestName']);
+    $FoodTag    = trim($_POST['FoodTag']);
 
     $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
             "FROM $TableName " .
