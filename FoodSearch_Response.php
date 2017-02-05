@@ -57,7 +57,7 @@
 
     echo "Sending string...\n";
     
-    //$Result = mysql_query($SQL);
+    $Result = mysql_query($SQL);
 
     echo "showing result...\n";
     
