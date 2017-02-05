@@ -3,10 +3,13 @@
 <head>
     <meta charset="utf-8">
     <!--title>huanglw笔记之web storage</title-->
-    <link type="text/css" rel="stylesheet" href="demo.css">
+    <!--link type="text/css" rel="stylesheet" href="demo.css"-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 </head>
 <body>
 <!--h3>huanglw学习笔记--JavaScript localStorage实现简单购物车</h3-->
+<div id="result"></div>
+
 <div id="addgoods_Div">
     <div id = "add_frame">
         <label for="price">商 品：</label>
@@ -31,8 +34,29 @@
 </div>
 <script>
     // 载入所有存储在localStorage的数据
+    init();
     loadAll();
 
+    function init() {
+        $(document).ready(function () {
+            $.getJSON('data.php', function(data) {
+                /*$.each(data, function(key,val) {
+                    var result='';
+                    result += key+' ';
+                    result += val.foodname+' ';
+                    result += val.price + '<br>';
+                    $('#result').html(result)
+                });*/
+                if(data)
+                {
+                    print(data);
+                }
+            });
+
+        });
+        return true;
+    }
+    init();
     //保存数据
     function save(){
         var goods = document.getElementById("goods").value;
@@ -89,7 +113,7 @@
         //alert("总价是："+amount);
         //alert("amount.toString:"+amount.toString());
 
-        document.getElementById('amount').innerHTML = amount;
+        //document.getElementById('amount').innerHTML = document.getElementById('amount').innerHTML+amount;
     }
 
 </script>

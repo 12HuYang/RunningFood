@@ -70,7 +70,7 @@
     function fsubmit(){
         var data = new FormData($('#form1')[0]);
         $.ajax({
-            url: '96904/images/server.php',
+            url: 'server.php',
             type: 'POST',
             data: data,
             dataType: 'JSON',
@@ -100,8 +100,8 @@
 <form name="form1" id="form1">
     <div class="contact-grid">
         <form>
-            <h4> Food Name : <input type="text" placeholder=" Name" required/></h4><br>
-            <h4> Price : <input type="text" placeholder=" Price" required/></h4><br>
+            <h4> Food Name : <input type="text" name="name" placeholder=" Name" required/></h4><br>
+            <h4> Price : <input type="text" name="price" placeholder=" Price" required/></h4><br>
             <h4> Rastaurant:</h4>&emsp;&emsp;&emsp;&emsp;&emsp;
             <input type="radio" name="rest" value="PizzaHut">PizzaHut<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;
             <input type="radio" name="rest" value="Domino">Dominos<br><br>&emsp;&emsp;&emsp;&emsp;&emsp;

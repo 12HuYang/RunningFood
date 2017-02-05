@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>That's about it</title>
 </head>
 <body>
-<form name="form" action="test.php" method="get">
-    name:<input type="text" name="name"><br>
-    rest:<input type="text" name="rest"><br>
-    price:<input type="text" name="price"><br>
-    <input type="submit"><br>
-</form>
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script>
+    $.getJSON('data.php', function(data) {
+        if(data){
+            $.each(data, function(fieldName, fieldValue) {
+                $("#" + fieldName).val(fieldValue);
+            });
+        }
+
+    });
+</script>
 </html>

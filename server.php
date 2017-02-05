@@ -4,7 +4,7 @@ $gender = isset($_POST['rest'])? $_POST['rest'] : '';
 $price = isset($_POST['price'])? $_POST['price'] : '';
 
 $filename = time().substr($_FILES['photo']['name'], strrpos($_FILES['photo']['name'],'.'));
-
+$saveplace ="images/".$filename;
 $response = array();
 
 $ID=$gender."_".$name;
@@ -22,8 +22,6 @@ mysql_query($insert_query) or die(mysql_error());
 //mysql_close($connection);
 //header("Location: foodinput.php");
 //die ();*/
-
-
 
 if(move_uploaded_file($_FILES['photo']['tmp_name'], $filename)){
 
