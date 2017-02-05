@@ -62,7 +62,9 @@
     $Result = $Conn->query($SQL);
 
     echo "showing result...\n";
+    /*
     show_result($Result);
+    */
     /////////////////////////////////////////
     // Functions
     /////////////////////////////////////////
