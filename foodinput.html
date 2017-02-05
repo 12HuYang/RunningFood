@@ -8,8 +8,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>foodinput</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title> FormData Demo </title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        function fsubmit(){
+            var data = new FormData($('#form1')[0]);
+            $.ajax({
+                url: 'foodresponse.php',
+                type: 'POST',
+                data: data,
+                dataType: 'JSON',
+                cache: false,
+                processData: false,
+                contentType: false
+            }).done(function(ret){
+                if(ret['isSuccess']){
+                    var result = '';
+                    result += 'Restraurant=' + ret['restraunt'] + '<br>';
+                    //result += 'Food Name=' + ret['FoodName'] + '<br>';
+                    //result += 'Price='+ret['Price']+'<br>';
+                    result += '<img src="' + ret['photo']  + '" width="100">';
+                    $('#result').html(result);
+                }else{
+                    alert('提交失敗');
+                }
+            });
+            return false;
+        }
+    </script>
+
 </head>
 <body>
 <div style="font-family: 'Times New Roman'">
@@ -18,11 +46,25 @@
     </font>
     </p>
 </div>
-<script type="text/javascript" src="formana.js"></script>
+<!--script type="text/javascript" src="formana.js"></script-->
 <div style="font-family: Verdana">
-    <ol>
-        <form id="myform" name="qualifyform" action="response03.php" onsubmit="return validateForm()" method="post" >
-            <li>
+    <form name="form1" id="form1">
+        <p>Restaurant:<br>
+            <input type="radio" name="Restaurant" value="Pizzahut">PizzaHut<br>
+            <input type="radio" name="Restaurant" value="Dominos">Dominos<br>
+            <input type="radio" name="Restaurant" value="Manderine">Manderine<br>
+            <input type="radio" name="Restaurant" value="Tokyoseoul">Tokyoseoul<br>
+            <input type="radio" name="Restaurant" value="NewGarden">NewGarden<br>
+            <input type="radio" name="Restaurant" value="RedBento">RedBento<br>
+            <input type="radio" name="Restaurant" value="Emerald">Emerald<br>
+            <input type="radio" name="Restaurant" value="Popo">Popo<br></p>
+        <p>Food Name:<input type="text" name="FoodName" cols=10 rows=1 maxlength="50" style="font-size: 18px"></p>
+        <p>Price:<input type="text" name="Price" cols=10 rows=1 maxlength="50" style="font-size: 18px"></p>
+        <p>Picture:<input type="file" name="photo" id="photo"></p>
+        <!--p>Preview:<div id="fileDisplayArea"></div></p-->
+        <p><input type="button" name="b1" value="submit" onclick="fsubmit()"></p>
+    </form>
+            <!--li>
                 Restraurant:<br><br>
                 <form>
                     <select name="Restraurant" style="font-size: medium; width: 200px">
@@ -36,104 +78,34 @@
                         <option value="Popo">Popo</option>
                     </select>
                 </form>
-                <br>
-                <!--Restaurant:<br>
+                <!--br>
+                Restaurant:<br>
                 <input type="radio" name="Restaurant" value="Pizzahut"/>PizzaHut<br>
                 <input type="radio" name="Restaurant" value="Dominos"/>Dominos<br>
                 <input type="radio" name="Restaurant" value="Manderine"/>Manderine House<br>
                 <input type="radio" name="Restaurant" value=""/>Divorced<br>
                 <input type="radio" name="Restaurant" value="single"/>Single<br><br-->
-            </li>
+            <!--/li>
             <li>
                 Food Name:<br>
-                <textarea name="FoodName" cols=10 rows=2 maxlength="50" style="font-size: 18px"></textarea>
-                <!--input type="radio" name="race" value="African American"/>African American<br>
-                <input type="radio" name="race" value="Caucasian"/>Caucasian<br>
-                <input type="radio" name="race" value="Asian"/>Asian<br>
-                <input type="radio" name="race" value="American India"/>American Indian/Alaska Native<br>
-                <input type="radio" name="race" value="Hawaiian"/>Native Hawaiian/Pacific Islander<br>
-                <input type="radio" name="race" value="Other"/>Other<br><br>
-                <!--Other(please type in):<input type="text" name="_race"><br><br>-->
+                <p><input name="FoodName" cols=10 rows=1 maxlength="50" style="font-size: 18px"></p>
             </li>
-            <!--li>
-                Ethnicity:<br>
-                <input type="radio" name="ethnicity" value="hispanic"/>Hispanic/Latino<br>
-                <input type="radio" name="ethnicity" value="nothispanic"/>Not Hispanic/Latino<br><br>
-            </li-->
-            <!--li>
-                Where were you born? <br><input type="text" name="bornplace"><br><br>
-            </li>
-            <li>
-            Where did you grow up? <br><input type="text" name="growup"><br><br>
-            </li>
-            <li>
-            Where did you go to school? What was the name of the school?<br>
-                <input type="text" name="school"><br><br>
-            </li-->
-            <li>
-                Price: <br>
-                <!--input type="radio" name="continent" value="Asia">Asia<br>
-                <input type="radio" name="continent" value="Africa">Africa<br>
-                <input type="radio" name="continent" value="Antarctica">Antarctica<br>
-                <input type="radio" name="continent" value="Australia">Australia & Oceania<br>
-                <input type="radio" name="continent" value="Europe">Europe<br>
-                <input type="radio" name="continent" value="North America">North America<br>
-                <input type="radio" name="continent" value="South America">South America<br><br-->
-                <textarea name="Price" cols=10 rows=2 maxlength="50" style="font-size: 18px"></textarea>
+            Price: <br>
+            <input name="Price" cols=10 rows=1 maxlength="50" style="font-size: 18px">
             </li>
             <li>
                 Picture:
-                <input type="hidden" name="pro_img" />
-                <iframe width="50" height="50" src="loadpic.php"></iframe><br />
-                <input type="file" name="foodpic" style="font-size: medium;width: 300px">
+                <input type="file" id="foodpic" name="foodpic" style="font-size: medium;width: 300px"><br>
+                Preview:
+                <div id="fileDisplayArea"></div>
                 <br>
             </li>
-            <!--li>
-                What is your native language?<br>
-                <input type="radio" name="language" value="English">English<br>
-                <input type="radio" name="language" value="Spanish">Spanish<br>
-                <input type="radio" name="language" value="Chinese">Chinese<br>
-                <input type="radio" name="language" value="Hindi">Hindi<br>
-                <input type="radio" name="language" value="Arabic">Arabic<br>
-                <input type="radio" name="language" value="Portuguese">Portuguese<br>
-                <input type="radio" name="language" value="Other">Other<br><br>
-                <!--Other(please type in):<input type="text" name="_language"><br><br>
-
-            </li>
-            <li>
-                How many years of education have you completed ?<br>
-                <input type="radio" name="education" value="elementary">1 to 8 years <br>
-                <input type="radio" name="education" value="highschool">9 to 12 years <br>
-                <input type="radio" name="education" value="college">13 to 16 years <br>
-                <input type="radio" name="education" value="graduate">17 to 20 years <br>
-                <input type="radio" name="education" value="medical">more than 20 years <br><br>
-
-            </li>
-            <li>
-                What is the highest degree you have earned ?<br>
-                <input type="radio" name="degree" value="No H.S.">Did not finish HighSchool<br>
-                <input type="radio" name="degree" value="H.S.Diploma/GED">H.S.Diploma/GED<br>
-                <input type="radio" name="degree" value="A.A.">A.A.<br>
-                <input type="radio" name="degree" value="B.A./B.S.">B.A./B.S.<br>
-                <input type="radio" name="degree" value="M.S./M.A./M.B.A.">M.S./M.A./M.B.A.<br>
-                <input type="radio" name="degree" value="Ph.D./M.D./J.D.">Ph.D./M.D./J.D.<br><br>
-            </li>
-            <li>
-                How much do you agree(or disagree) with the following statement: 'I am comfortable using a computer.'<br>
-                <input type="radio" name="computer" value="Strongly Agree"/>Strongly Agree<br>
-                <input type="radio" name="computer" value="Agree"/>Agree<br>
-                <input type="radio" name="computer" value="Neither agree nor disagree"/>Neither agree nor disagree<br>
-                <input type="radio" name="computer" value="Disagree"/>Disagree<br>
-                <input type="radio" name="computer" value="Strongly Disagree"/>Strongly Disagree<br><br>
-            </li>
-            <input type="hidden" name="MID" value="<?php echo $_GET['MID']; ?>">
-            <input type="hidden" name="GROUP" value="<?php echo $_GET['GROUP'];?>"-->
             <br>
 
             <input type="submit" value="Submit">
-        </form>
-    </ol>
+        </form-->
 </div>
+
 
 </body>
 </html>
