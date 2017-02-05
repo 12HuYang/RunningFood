@@ -12,21 +12,31 @@ $password = "lionking";
 $database = "b11_19615970_running4food";
 
 $connection=mysql_connect($servername,$username,$password);
-@mysql_select_db($database) or ("Database not found");
+@mysql_select_db($database) or (mysql_error());
 
-$query= "SELECT * FROM foodlist WHERE restaurant='Tokyoseoul'";
+$query="SELECT ID, foodname, price,foodimage FROM foodlist";
+
+//$query= "SELECT * FROM foodlist WHERE restaurant='Tokyoseoul'";
 
 //$sql = "SELECT foodname, price, foodimage FROM foodlist";
 
 $result = mysql_query($query);
+$response=array();
 
-echo $result;
+//echo $result;
 
-while($rows=mysql_fetch_array($result,MYSQL_ASSOC))
+
+while($rows=mysql_fetch_array($result, MYSQL_BOTH))
 {
-    echo "<tr><td>".$row["foodname"]."</td><td>".$row["price"].$row["foodimage"]."</td></tr>";
+    //printf("ID: %s  Name: %s", $rows["ID"], $rows["foodname"]);
+    //echo $rows["foodname"]." ".$rows["price"]." "."<img src=".$rows["foodimage"].",width=100px><br>";
+    $response[]=$rows;
 }
 
+echo json_encode($response);
+
+
+//echo "end";
 /*if ($result->num_rows > 0) {
     echo "<table><tr><th>ID</th><th>Name</th></tr>";
     // output data of each row
