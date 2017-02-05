@@ -8,32 +8,48 @@ $Password       = "lionking";
 $Conn           = "";
 $TableName      = "foodlist";
 
+echo $DBName . "\n";
+echo $ServerName . "\n";
+echo $UserName . "\n";
+echo $Password . "\n";
+echo $Conn . "\n";
+echo $TableName . "\n";
+
 /////////////////////////////////////////
 // Column Variables
 $CFoodName       = "foodname";
 $CRestName       = "restaurant";
 $CFoodPrice      = "price";
 
+echo $CFoodName . "\n";
+echo $CRestName . "\n";
+echo $CFoodPrice . "\n";
 /////////////////////////////////////////
 // SQL Variable
-SQL =   "SELECT $CFoodName, $CRestName, $CFoodPrice ".
-        "FROM $TableName ".
-        "WHERE CAST($CFoodPrice AS FLOAT) >= $MaxPrice ".
-        "ORDER BY RAND() ".
+$MaxPrice = $_POST["MaxPrice"];
+
+$SQL =   "SELECT $CFoodName, $CRestName, $CFoodPrice " .
+        "FROM $TableName " . 
+        "WHERE CAST($CFoodPrice AS FLOAT) >= $MaxPrice " .
+        "ORDER BY RAND() " .
         "LIMIT 1";
 
+echo "SQL = " . $SQL;
 /////////////////////////////////////////
 //Connect to the database
+echo "Connecting...\n";
 $Conn = mysql_connect($ServerName, $Username, $Password);
 @mysql_select_db($DBName) or ("Database not found");
 
 /////////////////////////////////////////
 // Main
+echo "Getting Results...\n";
 $Result = $Conn->query($SQL);
 if(InputValidation($MaxPrice)){
     echo "Food Name/Restaurant/Price<br>";
     while(show_result($Result))
     {
+        echo "Getting recursive results...\n";
         $Result = $Conn->query($SQL);
     }
 } 
@@ -47,7 +63,7 @@ function show_result($Result)
     if($Result->num_rows > 0)
     {
         $row = $Result->fetch_assoc();
-        echo $row[$CFoodName]." ".$row[$CRestName]." ".$row[$CFoodPrice]."<br>";
+        echo $row[$CFoodName] . " " . $row[$CRestName] . " " . $row[$CFoodPrice] . "<br>";
         $MaxPrice -= ((float)$row[$CFoodPrice]);
         return true;
     }

@@ -8,11 +8,22 @@ $Password       = "lionking";
 $Conn           = "";
 $TableName      = "foodlist";
 
+echo $DBName . "\n";
+echo $ServerName . "\n";
+echo $UserName . "\n";
+echo $Password . "\n";
+echo $Conn . "\n";
+echo $TableName . "\n";
+
 /////////////////////////////////////////
 // Column Variables
 $CFoodName       = "foodname";
 $CRestName       = "restaurant";
 $CFoodPrice      = "price";
+
+echo $CFoodName . "\n";
+echo $CRestName . "\n";
+echo $CFoodPrice . "\n";
 
 /////////////////////////////////////////
 // Input Variables
@@ -20,28 +31,34 @@ $CFoodPrice      = "price";
 
 /////////////////////////////////////////
 // SQL String
-$SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice ".
-        "FROM $TableName".
-        "WHERE $CFoodName = $FoodName AND ".
+$SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " .
+        "FROM $TableName" .
+        "WHERE $CFoodName = $FoodName AND " .
         "($RestName = NULL OR $CRestName = $RestName)";
         // Add Tag later
 
+echo "SQL = " . $SQL;
 
 //Connect to the database
+echo "Connecting...\n";
 $Conn = mysql_connect($ServerName, $Username, $Password); 
 @mysql_select_db($DBName) or ("Database not found");
 
 //Format POST input
+echo "Formatting inputs...\n";
 $FoodName   = format_input($_POST["FoodName"]);
 $RestName   = format_input($_POST["RestName"]);
 $FoodTag    = format_input($_Post["FoodTag"]);
 
+echo "Formatting string...\n";
 $FoodName   = format_string_in($FoodName);
 $RestName   = format_string_in($FoodName);
 $FoodTag    = format_string_in($FoodName);
 
+echo "Sending string...\n";
 $Result = $Conn->query($SQL);
 
+echo "showing result...\n";
 show_result($Result);
 /////////////////////////////////////////
 // Functions
