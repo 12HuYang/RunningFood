@@ -92,12 +92,24 @@ body a{
 }
 .banner {
   background: url(../images/16.jpg) no-repeat;
-  background-size: cover;
+  background-size:cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   -ms-background-size: cover;
   min-height: 600px;
+  animation-name: changeBackImg;
+  animation-duration: 12s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite
+}
+
+@keyframes changeBackImg {
+  0% { background: url(../images/16.jpg);  }
+  25% { background: url(../images/food1.jpg); }
+  50% { background: url(../images/food2.jpg); }
+  75% { background: url(../images/food3.jpg); }
+  100% { background: url(../images/food4.jpg); }
 }
 .banner-info {
   background-color:#D96B66;
