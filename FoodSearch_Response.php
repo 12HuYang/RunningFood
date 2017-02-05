@@ -20,9 +20,9 @@
 
     /////////////////////////////////////////
     // Column Variables
-    $CFoodName       = "foodname";
-    $CRestName       = "restaurant";
-    $CFoodPrice      = "price";
+    $CFoodName       = 'foodname';
+    $CRestName       = 'restaurant';
+    $CFoodPrice      = 'price';
 
     echo $CFoodName . "\n";
     echo $CRestName . "\n";
@@ -58,7 +58,7 @@
     $FoodTag    = format_input($_POST['FoodTag']);
     
     echo "Sending string...\n";
-    /*
+    
     $Result = $Conn->query($SQL);
 
     echo "showing result...\n";
@@ -92,5 +92,4 @@
 
 Conn->close();
 ///////////////////////////////////////// 
-*/
 ?>
