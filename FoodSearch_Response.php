@@ -27,7 +27,7 @@
     echo $CFoodName . "\n";
     echo $CRestName . "\n";
     echo $CFoodPrice . "\n";
-    /*
+    
     /////////////////////////////////////////
     // Input Variables
 
@@ -41,7 +41,7 @@
             // Add Tag later
 
     echo "SQL = " . $SQL;
-
+    /*
     //Connect to the database
     echo "Connecting...\n";
     $Conn = mysql_connect($ServerName, $Username, $Password); 
