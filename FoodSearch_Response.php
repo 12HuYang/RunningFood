@@ -45,7 +45,8 @@
     //Connect to the database
     echo "Connecting...\n";
     $Conn = mysql_connect($ServerName, $Username, $Password); 
-    @mysql_select_db($DBName) or ("Database not found");
+    if(!$Conn) echo "Not Connected";
+    else mysql_select_db($DBName, $Conn);
     
     //Format POST input
     echo "Formatting inputs...\n";
@@ -58,7 +59,7 @@
     $FoodTag    = format_input($_POST['FoodTag']);
     
     echo "Sending string...\n";
-    if($Conn == false) echo "Not Connected";
+    
     //$Result = $Conn->query($SQL);
 
     echo "showing result...\n";
