@@ -33,18 +33,24 @@ while($rows=mysql_fetch_array($result, MYSQL_BOTH))
     $response[]=$rows;
 }
 
-echo json_encode($response);
+//echo json_encode($response);
+?>
 
 
-//echo "end";
-/*if ($result->num_rows > 0) {
-    echo "<table><tr><th>ID</th><th>Name</th></tr>";
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "<tr><td>".$row["foodname"]."</td><td>".$row["price"].$row["foodimage"]."</td></tr>";
+<script type="text/javascript">
+    // pass PHP array to JavaScript array
+    var products = <?php echo json_encode( $response ) ?>;
+
+    // result seen through view source
+    // var products = [["choc_cake","Chocolate Cake",15],["carrot_cake","Carrot Cake",12],["cheese_cake","Cheese Cake",20],["banana_bread","Banana Bread",14]];
+
+    // how to access elements in multi-dimensional array in JavaScript
+    //alert( products[0][1] ); // Chocolate Cake
+    var list='';
+    for(i=0;i<products.length;i++)
+    {
+        for(j=0;j<products[i].length;j++)
+            list.append(products[i][j]);
     }
-    echo "</table>";
-} else {
-    echo "0 results";
-}
-$connection->close();*/
+    alert(list);
+</script>
