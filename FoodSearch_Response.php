@@ -6,7 +6,7 @@ $DBName         = "b11_19615970_running4food";
 $ServerName     = "sql100.byethost11.com";
 $UserName       = "b11_19615970";
 $Password       = "lionking";
-$Conn           = "";
+$Conn           = NULL;
 $TableName      = "foodlist";
 
 echo $DBName . "\n";
