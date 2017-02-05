@@ -37,6 +37,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li><a href=" resturants.html">Resturants</a></li>
 							<li><a href=" carrier.html">Carrier</a></li>
 							<li><a href=" contact.html">Contact</a></li>
+							<li><a href=" foodinput.html">Food Input</a></li>
 								<div class="clearfix"> </div>		
 						</ul>
 								<!-- script-for-nav -->
@@ -91,11 +92,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 							<div class="clearfix"> </div>
 						</div>
+						<form name="FoodSearch" method="post" action="FoodSearch_Response.php">
 						<ul>
 							<li class="span1_of_1">
 								 <!----------start section_room----------->
 								 <form>
-									<input type="text" class="textbox" value="Resturant Name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Resturant Name';}">
+									<input type="text" class="textbox" value="RestName" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'RestName';}">
 								</form>
 							 </li>
 							 <li class="span1_of_3">
@@ -108,7 +110,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="span1_of_1">
 								<!----------start section_room----------->
 								<form>
-									<input type="text" class="textbox" value="Food Type" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Food Type';}">
+									<input type="text" class="textbox" value="FoodName" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'FoodName';}">
 								</form>
 							</li>
 							<li class="span1_of_3">
@@ -118,6 +120,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</form>
 								</div>
 							</li>
+						</ul>
+						</form>
 								<div class="clearfix"></div>
 						</ul>
 					</div>
