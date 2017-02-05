@@ -79,7 +79,7 @@
     function show_result($result)
     {
         echo "Food Name/Restaurant/Price<br>";
-        while($row = mysql_fetch_array($result, MYSQL_BOTH)))
+        while($row = mysql_fetch_array($result, MYSQL_BOTH))
         {
             echo $row['foodname']." ".$row['restaurant']." ".$row['price']."<br>";
         }
