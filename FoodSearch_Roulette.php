@@ -26,8 +26,8 @@ echo $CRestName . "\n";
 echo $CFoodPrice . "\n";
 /////////////////////////////////////////
 // SQL Variable
-$MaxPrice = $_POST["MaxPrice"];
-
+$MaxPrice = trim($_POST['MaxPrice']);
+echo $MaxPrice;
 $SQL =   "SELECT $CFoodName, $CRestName, $CFoodPrice " .
         "FROM $TableName " . 
         "ORDER BY RAND() " . 
