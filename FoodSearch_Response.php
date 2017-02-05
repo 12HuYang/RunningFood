@@ -49,13 +49,13 @@
     
     //Format POST input
     echo "Formatting inputs...\n";
-    echo $_POST["FoodName"];
-    echo $_POST["RestName"];
-    echo $_POST["FoodTag"];
+    echo $_POST['FoodName'];
+    echo $_POST['RestName'];
+    echo $_POST['FoodTag'];
 
-    $FoodName   = format_input($_POST["FoodName"]);
-    $RestName   = format_input($_POST["RestName"]);
-    $FoodTag    = format_input($_POST["FoodTag"]);
+    $FoodName   = format_input($_POST['FoodName']);
+    $RestName   = format_input($_POST['RestName']);
+    $FoodTag    = format_input($_POST['FoodTag']);
     
     echo "Sending string...\n";
     /*
