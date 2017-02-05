@@ -1,4 +1,5 @@
 <?php
+echo "Starting Response";
 /////////////////////////////////////////
 // Database Variables
 $DBName         = "b11_19615970_running4food";
@@ -14,7 +15,8 @@ echo $UserName . "\n";
 echo $Password . "\n";
 echo $Conn . "\n";
 echo $TableName . "\n";
-
+?>
+/*
 /////////////////////////////////////////
 // Column Variables
 $CFoodName       = "foodname";
@@ -31,7 +33,7 @@ echo $CFoodPrice . "\n";
 
 /////////////////////////////////////////
 // SQL String
-$SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " .
+$SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
         "FROM $TableName" .
         "WHERE $CFoodName = $FoodName AND " .
         "($RestName = NULL OR $CRestName = $RestName)";
@@ -96,3 +98,4 @@ function show_result($result)
 Conn->close();
 ///////////////////////////////////////// 
 ?>
+*/
