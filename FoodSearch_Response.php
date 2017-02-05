@@ -50,7 +50,7 @@
 
     $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
             "FROM $TableName " . 
-            "WHERE ($CFoodName = $FoodName)";
+            "WHERE $CFoodName = \"$FoodName\"";
         /*
         .
             "WHERE ( ($FoodName = \"\") OR ($CFoodName = $FoodName) ) AND " .
