@@ -9,7 +9,8 @@
     <h2><font face = "verdana">Food Search</font> </h2>
     </div>
     <div class="FoodSearchPanel">
-        <form name = "FoodSearch" action="FooodSearch_Response.php" onsubmit="return ValidateFoodIn()">
+        <form name = "FoodSearch"
+              method="post" action="FoodSearch_Response.php">
         Food Name:<br>
         <input type="text" name="FoodName"><br>
         Restuarant Name:<br>
@@ -18,13 +19,14 @@
         <input type="text" name="FoodTag">
         </form>
     </div>
+    <br>
+    <br>
+    <h2><font face = "verdana">Food Roulette</font> </h2>
     <div class="FoodRoulettePanel">
-        <button type="button" onclick="alert('ImplementFoodRoulette')">
-        Food Roulette!
-        </button>
-        <div class="RouletteOptions">
-        Options Go Here!
-        </div>
+        <form>
+            Food Roulette! Enter Max Price!<br>
+            <input type= "text" name="MaxPrice">
+        </form>
     </div>
     <div class="ResultsArea">
         <p>Display Results Here</p>
