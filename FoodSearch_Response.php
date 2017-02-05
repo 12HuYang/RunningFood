@@ -46,7 +46,7 @@
     echo "Connecting...\n";
     $Conn = mysql_connect($ServerName, $Username, $Password); 
     //if(!$Conn) die('Could not connect; ' . mysqli_error());
-    else mysql_select_db($DBName, $Conn);
+    //else mysql_select_db($DBName, $Conn);
     
     //Format POST input
     echo "Formatting inputs...\n";
