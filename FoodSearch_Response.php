@@ -47,14 +47,14 @@
     $FoodName   = $_POST['FoodName'];
     $RestName   = $_POST['RestName'];
     $FoodTag    = $_POST['FoodTag'];
-
+    /*
     $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
             "FROM $TableName " .
             "WHERE $CFoodName = $FoodName AND " .
             "($CRestName = NULL OR $CRestName = $RestName)";
             // Add Tag later
     echo "SQL = " . $SQL;
-    
+    */
     echo "Sending string...\n";
     
     //$Result = mysql_query($SQL);
