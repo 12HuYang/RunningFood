@@ -49,10 +49,12 @@
     $FoodTag    = trim($_POST['FoodTag']);
 
     $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
-            "FROM $TableName " .
+            "FROM $TableName ";
+        /*
+        .
             "WHERE ( ($FoodName = \"\") OR ($CFoodName = $FoodName) ) AND " .
             "(($RestName = \"\") OR ($CRestName = $RestName))";
-            // Add Tag later
+            // Add Tag later */
     echo "SQL = " . $SQL;
 
     echo "Sending string...\n";
