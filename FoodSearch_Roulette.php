@@ -38,7 +38,7 @@ echo "SQL = " . $SQL;
 /////////////////////////////////////////
 //Connect to the database
 echo "Connecting...\n";
-$Conn = mysql_connect($ServerName, $Username, $Password);
+$Conn = mysql_connect($ServerName, $UserName, $Password);
 @mysql_select_db($DBName) or ("Database not found");
 
 /////////////////////////////////////////
@@ -77,7 +77,7 @@ function InputValidation($Input)
 
     if(!Result)
     {
-        echo "Food Max Price is not a number value larger than 0!"
+        echo "Food Max Price is not a number value larger than 0!";
     }
     return $Result;
 }
