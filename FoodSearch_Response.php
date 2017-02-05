@@ -50,8 +50,8 @@
 
     $SQL =  "SELECT $CFoodName, $CRestName, $CFoodPrice " . 
             "FROM $TableName " .
-            "WHERE ( $CFoodName = NULL or $CFoodName = $FoodName ) AND " .
-            "($CRestName = NULL OR $CRestName = $RestName)";
+            "WHERE ( $CFoodName = "" or $CFoodName = $FoodName ) AND " .
+            "($CRestName = "" OR $CRestName = $RestName)";
             // Add Tag later
     echo "SQL = " . $SQL;
 
